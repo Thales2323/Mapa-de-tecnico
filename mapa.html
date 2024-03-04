@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Técnicos de Informática</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Estilos CSS */
+        #map {
+            height: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #cadastroForm {
+            margin-bottom: 20px;
+        }
+
+        #tabelaAlfinetes {
+            margin-bottom: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        #tabelaAlfinetes th,
+        #tabelaAlfinetes td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        #tabelaAlfinetes th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #tabelaAlfinetes tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #tabelaAlfinetes tr:hover {
+            background-color: #ddd;
+        }
+
+        .botaoExcluir {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .botaoExcluir:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapa de Técnicos de Informática</h1>
+    <div id="map"></div>
+    
+    <form id="cadastroForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cidade">CIDADE ou CEP:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <input type="submit" value="Cadastrar Técnico">
+    </form>
+
+    <table id="tabelaAlfinetes">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CIDADE</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <!-- Aqui serão adicionadas as linhas da tabela de marcadores -->
+        </tbody>
+    </table>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
